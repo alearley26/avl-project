@@ -18,12 +18,8 @@
  * file when you're compiling this test file. The second choice is harder, but
  * we will be impressed if you do it!
  * 
- * Second, you'll need to implement at least the insert, preorder, inorder, and
- * postorder traversals to match the following interface:
- * 
- * 
- * You'll also need to name your AVL tree class "AvlTree" and your node class
- * "Node".
+ * You'll also need to name your AVL tree class "AvlTree" and write your
+ * insert, search, and traversals to match those we provide in avl.cpp.
  * 
  * We left the implementation details of this project open-ended to give you
  * practice with making design decisions. However, Catch2 is first and foremost
