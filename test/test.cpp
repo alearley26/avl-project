@@ -1,7 +1,7 @@
 #include "../src/avl.cpp"
 
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include "./catch.hpp"
 
 /*
  * README 
@@ -33,34 +33,47 @@
  * most of the hard work is still left up to you! :^)
  */
 
-// Our test cases to test each function!
-  TEST_CASE("Insert successful", "[Node]"){
-        AvlTree tree;
-        REQUIRE(tree.insert(root, "Tommy", 123456789));
-        REQUIRE_FALSE(!insert(root, "Tommy", 123456789));
-  }
+TEST_CASE("Insert valid student", "[insert]"){
+    AvlTree tree;
+    REQUIRE(tree.insert("Tommy", 12345678));
+}
 
-  TEST_CASE("Search successful", "[Node]"){
-        Node * root;
-        REQUIRE(search(root, "Tommy"));
-        REQUIRE_FALSE(!search(root, "Tommy"));
+TEST_CASE("Reject invalid and duplicate students", "[insert]"){
+    AvlTree tree;
+    REQUIRE_FALSE(tree.insert("!@#!@", 12345678)); //Non-alpha characters
+    REQUIRE_FALSE(tree.insert("Tommy", 123)); //ID not 8 digits
+    REQUIRE(tree.insert("Tommy", 12345678));
+    REQUIRE_FALSE(tree.insert("Tommy", 12345678)); //No duplicate IDs!
+}
 
-        REQUIRE(search(root, 123456789));
-        REQUIRE_FALSE(!search(root, 123456789));
-  }
+TEST_CASE("Stepik test case 1", "[insert][search]"){
+    AvlTree tree;
+    REQUIRE(tree.search(12345678) == "Not found!");
+    REQUIRE(tree.search("Adam") == -1);
+    REQUIRE(tree.insert("Adam", 12345678));
+    REQUIRE(tree.search(23456789) == "Not found!");
+    REQUIRE(tree.search(12345678) == "Adam");
+}
 
-  TEST_CASE("PrintInorder", "[Node][print]"){
-        Node * root;
-        vector<string> names{"Brian", "Brandon", "Briana", "Bella"};
-        vector<string> more_names{"Brian", "Brandon", "Briana", "Bella", "Sam"};
+TEST_CASE("Stepik test case 3", "[insert][count]"){
+    AvlTree tree;
+    REQUIRE(tree.insert("Evan", 44985771));
+    REQUIRE(tree.insert("Earl", 31834874));
+    REQUIRE(tree.insert("Erica", 21456789));
+    REQUIRE(tree.countLevels() == 2);
+    REQUIRE(tree.insert("Enrique", 17891824));
+    REQUIRE(tree.countLevels() == 3);
+}
 
-        REQUIRE(printInorder(root) == names);
-        REQUIRE_FALSE(printInorder(root) == more_names);
-  }
-
-  TEST_CASE("PrintLevelCount", "[Node][print]"){
-        Node * root;
-       
-        REQUIRE(printLevelCount(root) == 2);
-        REQUIRE_FALSE(printLevelCount(root) == 3);
-  }
+TEST_CASE("Stepik test case 5", "[insert][traversal]"){
+    AvlTree tree;
+    REQUIRE(tree.insert("Caroline", 50005000));
+    REQUIRE(tree.insert("Cory", 35354334));
+    REQUIRE(tree.insert("Cecilia", 76543210));
+    REQUIRE(tree.insert("Carla", 56567342));
+    REQUIRE(tree.insert("Cody", 83711221));
+    REQUIRE(tree.insert("Chris", 17449900));
+    REQUIRE(tree.traverseInorder() == "Chris, Cory, Caroline, Carla, Cecilia, Cody");
+    REQUIRE(tree.traversePreorder() == "Caroline, Cory, Chris, Cecilia, Carla, Cody");
+    REQUIRE(tree.traversePostorder() == "Chris, Cory, Carla, Cody, Cecilia, Caroline");
+}
