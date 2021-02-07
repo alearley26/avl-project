@@ -1,2 +1,6 @@
+ifeq ($(OS),Windows_NT)
+else
+	CFLAGS="-std=c++11"
+endif
 make: 
-	g++ -std=c++11 test/test.cpp -o AvlTests && ./AvlTests
+	g++ $(CFLAGS) test/test.cpp -o AvlTests && ./AvlTests
