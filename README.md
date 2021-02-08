@@ -10,7 +10,7 @@ Edit `src/avl.cpp` to implement your self-balancing AVL tree, edit `test/test.cp
 or modify the Catch2 tests, and use the Makefile (or the standard g++ command line interface,
 or a VSCode build task) to compile and run the tests.
 
-# Testmate Information
+# TestMate Information
 You may need to edit `.vscode/settings.json` to get the TestMate Test Explorer to pick up your
 test executable. Your program's executable (i.e. a.out, AvlTests, a.exe, etc.) name should match 
 exactly what it shows in settings.json. We have provided several possible if you look at 
