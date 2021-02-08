@@ -24,7 +24,7 @@ You can check by typing `ls` into the terminal.
 
 What the Makefile does:
  * All it does is compile then run `test/test.cpp` which runs tests on `src/avl.cpp` with Catch2. 
- * It checks which operating System the computer uses (MacOS/Windows) and omits the flag 
+ * It checks which operating system the computer uses (MacOS/Windows) and omits the flag 
 `"-std=c++11"` if the system is Windows and otherwise adds it. Having or not having the 
 flag would make the respective system angry so we accounted for that.
 
