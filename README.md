@@ -20,10 +20,10 @@ settings.json, you can add a new one to the list. The settings.json file is used
 To use the Makefile type `make` into the terminal.
 Be sure to look at the Makefile to understand what it is doing. 
 Make sure you are in the same directory as the Makefile when you run make. 
-You can check by typing the `ls` into the terminal.
+You can check by typing `ls` into the terminal.
 
 What the Makefile does:
- * All it does is compile then run `test.cpp` which runs tests on `avl.cpp` with Catch2. 
+ * All it does is compile then run `test/test.cpp` which runs tests on `src/avl.cpp` with Catch2. 
  * It checks which operating System the computer uses (MacOS/Windows) and omits the flag 
 `"-std=c++11"` if the system is Windows and otherwise adds it. Having or not having the 
 flag would make the respective system angry so we accounted for that.
