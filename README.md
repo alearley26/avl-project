@@ -8,6 +8,16 @@ or a VSCode build task) to compile and run the tests.
 You may need to edit `.vscode/settings.json` to get the TestMate Test Explorer to pick up your
 test executable.
 
+To use the Makefile type "make" into the terminal, without the "".
+Be sure to look at the Makefile to understand what it is doing. 
+
+What the Makefile does:
+ * All it does is compile and run the file test.cpp which runs tests on the avl.cpp file. 
+ * It checks which operating System the computer uses (MacOS/Windows) and adds the flag 
+"-std=c++11" if the system is MacOS and otherwise omits it. Having or not having the 
+flag would make the respective system angry so we accounted for that.
+
+
 ## Testing resources
  * Hamish's [Catch2 and VSCode demo](https://youtu.be/QNUj4IPVOPA)
  * Dhruv's [VSCode setup video](https://youtu.be/28aFQzlPrnE)
