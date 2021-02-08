@@ -13,19 +13,19 @@ or a VSCode build task) to compile and run the tests.
 # TestMate Information
 You may need to edit `.vscode/settings.json` to get the TestMate Test Explorer to pick up your
 test executable. Your program's executable (i.e. a.out, AvlTests, a.exe, etc.) name should match 
-exactly what it shows in settings.json. We have provided several possible if you look at 
+exactly what it shows in settings.json. We have provided several possible options if you look at 
 settings.json, you can add a new one to the list. The settings.json file is used to link with Testmate.
 
 # Makefile Explanation
-To use the Makefile type "make" into the terminal, without the "".
+To use the Makefile type `make` into the terminal.
 Be sure to look at the Makefile to understand what it is doing. 
 Make sure you are in the same directory as the Makefile when you run make. 
-You can check by typing this command into the terminal: ls.
+You can check by typing the `ls` into the terminal.
 
 What the Makefile does:
- * All it does is compile and run the file test.cpp which runs tests on the avl.cpp file with Catch2. 
+ * All it does is compile then run `test.cpp` which runs tests on `avl.cpp` with Catch2. 
  * It checks which operating System the computer uses (MacOS/Windows) and omits the flag 
-"-std=c++11" if the system is Windows and otherwise adds it. Having or not having the 
+`"-std=c++11"` if the system is Windows and otherwise adds it. Having or not having the 
 flag would make the respective system angry so we accounted for that.
 
 Use this like for a refresher on compiling programs using GNU:
