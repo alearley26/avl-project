@@ -10,6 +10,6 @@ test executable.
 
 ## Testing resources
  * Hamish's [Catch2 and VSCode demo](https://youtu.be/QNUj4IPVOPA)
- * Dhruv's [VSCode setup video]
+ * Dhruv's [VSCode setup video](https://youtu.be/28aFQzlPrnE)
  * [Catch2 Tutorial](https://github.com/catchorg/Catch2/blob/v2.x/docs/tutorial.md#top)
  * [TestMate extension docs](https://marketplace.visualstudio.com/items?itemName=matepek.vscode-catch2-test-adapter)
